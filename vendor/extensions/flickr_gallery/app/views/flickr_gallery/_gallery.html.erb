@@ -1,0 +1,15 @@
+<% if @hastitle == true %>
+<h3></h3>
+<% end %>
+
+<% if @photos != 0 %>
+
+<ul class="flickr-gallery">
+  <% for photo in @photos %>
+    <li><a href="<%= photo[1] %>" title="<%= photo[3] %>" rel="gallery"><img title="<%= photo[2] %>" src="<%= photo[0] %>" /></a></li>
+  <% end %>
+</ul>
+
+<% else %>
+  <p>The flickr API is having issues, please navigate directly to flickr.</p>
+<% end %>

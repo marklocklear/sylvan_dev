@@ -1,0 +1,50 @@
+<tr>
+  <td class="label"><label for="page_page_title">SEO Title Tag</label></td>
+  <td class="field"><input class="textbox" id="page_page_title" name="page[page_title]" size="70" type="text" value="<%= @page.page_title %>" /></td>
+</tr>
+<tr>
+  <td class="label"><label for="page_link_title">Link Title Attribute</label></td>
+  <td class="field"><input class="textbox" id="page_link_title" name="page[link_title]" size="100" type="text" value="<%= @page.link_title %>" /></td>
+</tr>
+<tr>
+  <td class="label"><label for="page_change_frequency">Change Frequency</label></td>
+  <td class="field">
+    <select id="page_change_frequency" name="page[change_frequency]" class="checkbox">
+      <option></option>
+      <option <%= "selected='selected'" if @page.change_frequency == "always" -%> >always</option>
+      <option <%= "selected='selected'" if @page.change_frequency == "hourly" -%> >hourly</option>
+      <option <%= "selected='selected'" if @page.change_frequency == "daily" -%> >daily</option>
+      <option <%= "selected='selected'" if @page.change_frequency == "weekly" -%> >weekly</option>
+      <option <%= "selected='selected'" if @page.change_frequency == "monthly" -%> >monthly</option>
+      <option <%= "selected='selected'" if @page.change_frequency == "yearly" -%> >yearly</option>
+      <option <%= "selected='selected'" if @page.change_frequency == "never" -%> >never</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td class="label"><label for="page_priority">Priority</label></td>
+  <td class="field">
+    <select id="page_priority" name="page[priority]" class="checkbox">
+      <option <%= "selected='selected'" if @page.priority == '1' -%> >1</option>
+      <option <%= "selected='selected'" if @page.priority == '0.9' -%> >0.9</option>
+      <option <%= "selected='selected'" if @page.priority == '0.8' -%> >0.8</option>
+      <option <%= "selected='selected'" if @page.priority == '0.7' -%> >0.7</option>
+      <option <%= "selected='selected'" if @page.priority == '0.6' -%> >0.6</option>
+      <option <%= "selected='selected'" if @page.priority == '0.5' -%> >0.5</option>
+      <option <%= "selected='selected'" if @page.priority == '0.4' -%> >0.4</option>
+      <option <%= "selected='selected'" if @page.priority == '0.3' -%> >0.3</option>
+      <option <%= "selected='selected'" if @page.priority == '0.2' -%> >0.2</option>
+      <option <%= "selected='selected'" if @page.priority == '0.1' -%> >0.1</option>
+      <option <%= "selected='selected'" if @page.priority == '0' -%> >0</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td class="label"><label for="page_index_for_search">Index For Search?</label></td>
+  <td class="field">
+    <select id="ppage_index_for_search" name="page[index_for_search]" class="checkbox">
+      <option <%= "selected='selected'" if @page.index_for_search == "yes" -%> >yes</option>
+      <option <%= "selected='selected'" if @page.index_for_search == "no" -%> >no</option>
+    </select>
+  </td>
+</tr>

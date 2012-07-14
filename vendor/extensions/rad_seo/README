@@ -1,0 +1,20 @@
+= Rad Seo
+
+RadSeo provides fine tune SEO tweaking tools for Radiant CMS.
+
+= Features
+
+ * Sitemap.xml & Robots.txt Tools
+   * Update Frequency, Priority & Indexed? fields in page meta data.
+   * Valid Sitemap.xml generated using above fields.
+   * robots.txt file generated denying access to all pages where index for search? is set to false.
+ * Additional Radius Tags
+   * SEO Title Tag and Link Title Attribute fields added to page meta data. 
+   * <r:page_title /> will display a <title></title> tag containing either A) the text in the SEO Title Tag field, or B) the default radiant page name.
+   * <r:link /> will add a title attribute to your link (<a>) when linking to a page with text in the Link Title Attribute field.
+
+
+= To Do
+ * Testing
+ * Better Documentation
+

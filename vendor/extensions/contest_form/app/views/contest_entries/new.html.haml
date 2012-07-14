@@ -1,0 +1,94 @@
+- form_for (@contest_entry) do |f|
+
+  %p
+    %span
+      *
+    = f.label :first_name
+    = f.text_field :first_name, :class=>"required"
+    
+  %p
+    %span
+      *
+    = f.label :last_name
+    = f.text_field :last_name, :class=>"required"
+  
+  %p
+    %span
+      *
+    = f.label :email
+    = f.text_field :email, :class=>"required email"
+    
+  %p
+    %span
+      *
+    = f.label :essay_one, "Essay #1: Describe your GO Adventure in 250 words or less"
+    = f.text_area :essay_one, :class=>"required", :id=>"essay1"  
+
+  %p
+    %span
+      *
+    = f.label :essay_two, "Essay #2: Describe how you will document and share your Adventure with the world in 200 words or less"
+    = f.text_area :essay_two, :class=>"required", :id=>"essay2"
+    
+  %p
+    %strong
+      We know all contestants will not have a blog or Twitter account. That's ok! Just fill out as much of the following information as you can:
+    
+  %p
+    = f.label :blog, "Blog URL"
+    = f.text_field :blog
+
+  %p
+    = f.label :facebook, "Facebook Page URL"
+    = f.text_field :facebook
+
+  %p
+    = f.label :youtube, "YouTube Channel"
+    = f.text_field :youtube
+
+  %p
+    = f.label :twitter, "Twitter URL"
+    = f.text_field :twitter
+    
+  %p
+    = f.label :phone
+    = f.text_field :phone
+      
+  %p
+    = f.label :address_one
+    = f.text_field :address_one
+  %p
+    = f.label :address_two
+    = f.text_field :address_two
+  %p
+    = f.label :city
+    = f.text_field :city
+  %p
+    = f.label :state
+    = f.text_field :state
+  %p
+    = f.label :zip
+    = f.text_field :zip
+
+  %p
+    = f.label :age
+    = f.text_field :age
+
+  %p
+    = f.label :gender
+    = f.radio_button(:gender, "male")
+    = f.label :gender_male, "Male"
+    = f.radio_button(:gender, "female")
+    = f.label :gender_female, "Female"
+  
+  /how hear
+  %p
+    = f.label :how_hear, "How did you hear about our Contest?"
+    = f.text_area :how_hear
+  
+  %p.terms
+    = f.check_box :opt_out, :class=>"required"
+    = f.label "* I have read and agree to the #{ link_to "Rules and Terms of Service", "/2012sylvansportcontestofficialrules.pdf"}"
+    
+  %p
+    = f.submit "Submit"

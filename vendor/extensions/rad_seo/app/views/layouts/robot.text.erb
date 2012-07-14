@@ -1,0 +1,7 @@
+#robots.txt for <%= Radiant::Config['rad_seo.domain'] -%>
+
+#Allow all bots everything by default
+User-agent: *
+Allow: /
+#Disallow the following
+<%= yield %>

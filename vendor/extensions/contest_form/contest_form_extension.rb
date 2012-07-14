@@ -1,0 +1,24 @@
+# Uncomment this if you reference any of your controllers in activate
+# require_dependency 'application_controller'
+
+class ContestFormExtension < Radiant::Extension
+  version "1.0"
+  description "Describe your extension here"
+  url "http://yourwebsite.com/contest_form"
+  
+  # extension_config do |config|
+  #   config.gem 'some-awesome-gem
+  #   config.after_initialize do
+  #     run_something
+  #   end
+  # end
+
+  # See your config/routes.rb file in this extension to define custom routes
+  
+  def activate
+    tab 'Contest Entries' do
+      add_item "Browse", "/admin/contest_entries"
+      add_item "Export", "/admin/contest/export", :after => "Browse"
+    end
+  end
+end

@@ -1,0 +1,6 @@
+<url>
+  <loc><%= build_full_url(url) -%></loc>
+  <lastmod><%= url.updated_at.strftime("%Y-%m-%dT%H:%MZ") -%></lastmod>
+  <changefreq><%= url.change_frequency.nil? || url.change_frequency.empty? ? 'weekly' : url.change_frequency -%></changefreq>
+  <priority><%= url.priority || '0.5' -%></priority>
+</url>

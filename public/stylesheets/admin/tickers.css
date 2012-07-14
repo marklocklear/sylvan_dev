@@ -1,0 +1,31 @@
+.ticker h4{
+  display:inline;
+  font-size:17px;
+  padding-right:12px;
+}
+
+.small {
+  color:#888;
+  font-size:14px;
+}
+
+.ticker{
+  width:700px;
+  padding-left:25px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.ticker .edits{
+  float:right;
+}
+
+#tickers-content a{
+  text-decoration:none;
+  margin-right:5px;
+}
+
+#tickers-content a img{
+  margin-top:-4px;
+  margin-right:2px;
+}

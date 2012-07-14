@@ -1,0 +1,75 @@
+
+
+<script type="text/javascript">
+
+  var apiEndpoint = 'http://vimeo.com/api/v2/';
+  // var albumEndpoint = 'http://vimeo.com/api/v2/album/';
+  var oEmbedEndpoint = 'http://vimeo.com/api/oembed.json';
+  var oEmbedCallback = 'switchVideo';
+  var videosCallback = 'setupGallery';
+  var vimeoData = '<%= @userinput %>';
+  // var videos = [];
+  // var videoAlbum = '<%= @album %>';
+
+  // Get the user's videos
+  // $(document).ready(function() {
+  //   $.getScript(apiEndpoint + vimeoData + '/videos.json?callback=' + videosCallback); 
+  // });
+  
+  $.getScript(apiEndpoint + vimeoData + '/videos.json?callback=' + videosCallback); 
+
+  // $.getScript('http://vimeo.com/api/v2/album/1580745/videos.json?callback=' + videosCallback); 
+  // $.getScript('http://vimeo.com/api/v2/album/1581300/videos.json?callback=' + videosCallback); 
+
+  function getVideo(url) {
+    $.getScript(oEmbedEndpoint + '?url=' + url + '&width=504&height=280&autoplay=true&callback=' + oEmbedCallback);
+  }
+
+  function setupGallery(videos) {
+
+    // Load the first video
+    getVideo(videos[0].url);
+
+    // Add the videos to the gallery
+    for (var i = 0; i < videos.length; i++) {
+      var html = '<li><a href="' + videos[i].url + '"><img src="' + videos[i].thumbnail_small + '" class="thumb" />';
+      html += '<p>' + videos[i].title + '</p></a></li>';
+      $('#thumbs ul').append(html);
+    }    
+
+    // Switch to the video when a thumbnail is clicked and open in fancybox
+    $('#thumbs a').click(function(event) {
+      event.preventDefault();
+      getVideo(this.href);
+      $.fancybox({
+       'href'          : '#video',
+       'transitionIn'  : 'elastic',
+       'transitionOut' : 'elastic',
+       'titlePosition' : 'inside',
+       'overlayShow'   : 'true',
+       'overlayColor'  : '#000',
+       'overlayOpacity': '0.8'
+      });
+      return false;
+
+    });
+
+  }
+
+  function switchVideo(video) {
+    $('#video').html(unescape(video.html));
+  }
+
+</script>
+
+
+  <!-- <div id="stats">
+    <h2></h2>
+    <div style="clear: both;"></div>
+  </div> -->
+  <div id="vimeo-embed">
+    <div id="video"></div>
+    <div id="thumbs">
+      <ul></ul>
+    </div>
+  </div>

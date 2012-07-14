@@ -1,0 +1,7 @@
+public/http*
+public/assets
+*.DS_Store
+tmp/cache
+log/*
+content
+tmp

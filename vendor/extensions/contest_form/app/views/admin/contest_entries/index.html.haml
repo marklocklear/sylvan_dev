@@ -1,0 +1,50 @@
+
+%table
+  %thead
+    %th
+      First Name
+    %th
+      Last Name
+    %th
+      E-mail
+    %th
+      Essay One
+    %th
+      Essay Two
+    %th
+      Blog
+    %th
+      Facebook
+    %th
+      Youtube
+    %th
+      Twitter
+    %th
+      Phone
+    %th
+      Age
+  %tbody
+    -for entry in @contest_entries
+      %tr
+        %td
+          = entry.first_name
+        %td
+          = entry.last_name
+        %td
+          = entry.email
+        %td
+          = entry.essay_one
+        %td
+          = entry.essay_two
+        %td
+          = entry.blog
+        %td
+          = entry.facebook
+        %td
+          = entry.youtube
+        %td
+          = entry.twitter
+        %td
+          = entry.phone
+        %td
+          = entry.age
